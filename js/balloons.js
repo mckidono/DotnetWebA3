@@ -60,7 +60,10 @@ $('#select-all').on('change',function() {
     } else {
         $(':checkbox').each(function() {
             this.checked = false;
-            $('div#balloonAnchorElement').hide();
+            $('#' + this.id + 'Img').css('visibility', 'visible')
+            $(this).is(':checked') ?
+             $('#' + this.id + 'Img').removeClass().addClass('animated bounceInDown') :
+             $('#' + this.id + 'Img').addClass('animated bounceOutUp');;
         });
     }
 });
