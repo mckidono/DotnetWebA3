@@ -4,7 +4,30 @@ $('label#red').on("mouseover",turnRed);
 $('label#green').on("mouseover",turnGreen);
 $('label#blue').on("mouseover",turnBlue);
 
+
 });
+
+// $( window ).on("load", function() {
+//     randomize.load();
+// });
+window.onload = function(){
+    
+    randomNumber = Math.floor(Math.random()*4+1);
+
+     if (randomNumber == 1) {
+          $('h1#birthday').addClass('animated heartBeat');
+     }
+     if (randomNumber == 2) {
+        $('h1#birthday').addClass('animated bounce');
+     }
+     if (randomNumber == 3) {
+        $('h1#birthday').addClass('animated rubberBand');
+
+     }
+
+
+}
+
 
 function turnRed(){
     $('h1#birthday').css('color','#f51000');
@@ -15,6 +38,11 @@ function turnGreen(){
 function turnBlue(){
     $('h1#birthday').css('color','#0081d6');
 }
+// function randomize(){
+//     $('div#body').css('background','#f51000')
+// }
+
+
 
 
 $(function(){
