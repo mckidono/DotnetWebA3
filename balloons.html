@@ -34,7 +34,7 @@
 <body>
     
     <!-- content -->
-    <div class="container" id="body">
+    <div class="container">
         <h1 id="birthday">Happy Birthday!</h1><hr/>
         <form role="form">
             <div id="toast" class="toast" style="margin-top:5vw; position: absolute; right: 100px; z-index: 2">
@@ -64,6 +64,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Select your favorite balloons</h5>
                             <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" name="select-all" id="select-all" />
+                                <label class="form-check-label" for="all" id="all">Select All</label>
+                            </div>
+                            <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="red">
                                 <label class="form-check-label" for="red" id="red">Red balloons</label>
                             </div>
@@ -79,10 +83,12 @@
                     </div>
                     <button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
                 </div>
-                <div class="col-sm">
-                    <img src="media/red.png" class="ball" alt="red balloon" id="redImg" />
-                    <img src="media/green.png" class="ball" alt="green balloon" id="greenImg" />
-                    <img src="media/blue.png" class="ball" alt="blue balloon" id="blueImg" />
+                <div class="col-sm" >
+                    <div id="balloonAnchorElement">
+                        <img src="media/red.png" class="ball" alt="red balloon" id="redImg" />
+                        <img src="media/green.png" class="ball" alt="green balloon" id="greenImg" />
+                        <img src="media/blue.png" class="ball" alt="blue balloon" id="blueImg" />
+                    </div>
                 </div>
             </div>
         </form>

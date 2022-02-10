@@ -4,6 +4,7 @@ $('label#red').on("mouseover",turnRed);
 $('label#green').on("mouseover",turnGreen);
 $('label#blue').on("mouseover",turnBlue);
 
+
 $("button#submit").on("click", makeToast);
 
 
@@ -44,10 +45,29 @@ function turnBlue(){
 //     $('div#body').css('background','#f51000')
 // }
 
+
+
+$('#select-all').on('change',function() {
+    if(this.checked) {
+        $(':checkbox').each(function() {
+            this.checked = true;
+            $('div#balloonAnchorElement').show();
+            $('#' + this.id + 'Img').css('visibility', 'visible')
+            $(this).is(':checked') ?
+             $('#' + this.id + 'Img').removeClass().addClass('animated bounceInDown') :
+             $('#' + this.id + 'Img').addClass('animated bounceOutUp');
+        });
+    } else {
+        $(':checkbox').each(function() {
+            this.checked = false;
+            $('div#balloonAnchorElement').hide();
+        });
+    }
+});
+
+
+
 function makeToast(){
-    let isRedChecked = $("#red");
-    let isGreenChecked = $("#isPrevEmploy");
-    let isBlueChecked = $("#isTitlePicked");
 
     if ($('#red').prop('checked') || $('#green').prop('checked') || $('#blue').prop('checked')){
         $('#toast').toast({ autohide: false }).toast('hide');
@@ -55,8 +75,6 @@ function makeToast(){
         $('#toast').toast({ autohide: false }).toast('show');
     }
 }
-
-
 
 
 $(function(){
