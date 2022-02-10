@@ -4,6 +4,8 @@ $('label#red').on("mouseover",turnRed);
 $('label#green').on("mouseover",turnGreen);
 $('label#blue').on("mouseover",turnBlue);
 
+$("button#submit").on("click", makeToast);
+
 
 });
 
@@ -41,6 +43,18 @@ function turnBlue(){
 // function randomize(){
 //     $('div#body').css('background','#f51000')
 // }
+
+function makeToast(){
+    let isRedChecked = $("#red");
+    let isGreenChecked = $("#isPrevEmploy");
+    let isBlueChecked = $("#isTitlePicked");
+
+    if ($('#red').prop('checked') || $('#green').prop('checked') || $('#blue').prop('checked')){
+        $('#toast').toast({ autohide: false }).toast('hide');
+    } else {
+        $('#toast').toast({ autohide: false }).toast('show');
+    }
+}
 
 
 
